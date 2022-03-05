@@ -31,7 +31,7 @@ module.exports = {
         if (url.match(/^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi)) {
             try {
                 songInfo = await ytdl.getInfo(url);
-                if (!songInfo) return sendError("Looks like i was unable to find the song on YouTube", message.channel);
+                if (!songInfo) return sendError("<:x_:944952424270012447> Looks like i was unable to find the song on YouTube", message.channel);
                 song = {
                     id: songInfo.videoDetails.videoId,
                     title: songInfo.videoDetails.title,
@@ -49,7 +49,7 @@ module.exports = {
         } else {
             try {
                 var searched = await yts.search(searchString);
-                if (searched.videos.length === 0) return sendError("Looks like i was unable to find the song on YouTube", message.channel);
+                if (searched.videos.length === 0) return sendError("<:x_:944952424270012447> Looks like i was unable to find the song on YouTube", message.channel);
 
                 songInfo = searched.videos[0];
                 song = {
@@ -70,7 +70,7 @@ module.exports = {
         if (serverQueue) {
             serverQueue.songs.push(song);
             let thing = new MessageEmbed()
-                .setAuthor("Song has been added to queue", "https://github.com/navaneethkm004/my-images/blob/main/giphy.gif?raw=true")
+                .setAuthor("<a:check_mark:944952166869778502> Song has been added to queue <a:song12:949469152647733339>", "https://github.com/navaneethkm004/my-images/blob/main/giphy.gif?raw=true")
                 .setThumbnail(song.img)
                 .setColor("#fffdd0")
                 .addField("Name", song.title, true)
@@ -96,7 +96,7 @@ module.exports = {
             const queue = message.client.queue.get(message.guild.id);
             if (!song) {
                 sendError(
-                    "Thank you for using my code! [GitHub](https://github.com/navaneethkm004/Discord-24x7-Radio-Bot)",
+                    "**Contact:** __(Kanki)[https://instagram.com/itzz_siba?utm_medium=copy_link]",
                     message.channel
                 );
                 message.client.queue.delete(message.guild.id);
@@ -110,7 +110,7 @@ module.exports = {
                         if (queue) {
                             queue.songs.shift();
                             play(queue.songs[0]);
-                            return sendError(`An unexpected error has occurred.\nPossible type \`${er}\``, message.channel);
+                            return sendError(`<:x_:944952424270012447> An unexpected error has occurred.\nPossible type \`${er}\``, message.channel);
                         }
                     }
                 });
@@ -127,7 +127,7 @@ module.exports = {
 
             dispatcher.setVolumeLogarithmic(queue.volume / 100);
             let thing = new MessageEmbed()
-                .setAuthor("Started Playing Music!", "https://github.com/navaneethkm004/my-images/blob/main/giphy.gif?raw=true")
+                .setAuthor("<a:check_mark:944952166869778502> Started Playing Music!", "https://github.com/navaneethkm004/my-images/blob/main/giphy.gif?raw=true")
                 .setThumbnail(song.img)
                 .setColor("#fffdd0")
                 .addField("Name", song.title, true)
