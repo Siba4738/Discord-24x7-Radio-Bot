@@ -13,7 +13,7 @@ module.exports = {
     var permissions = 37080128;
     
     let invite = new MessageEmbed()
-    .setTitle(`Invite ${client.user.username}`)
+    .setTitle(`<a:check_mark:944952166869778502> Invite ${client.user.username} <a:song12:949469152647733339>`)
     .setDescription(`Want me in your server? Invite me today! \n\n [Invite Link](https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot)`)
     .setURL(`https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot`)
     .setColor("#fffdd0")
