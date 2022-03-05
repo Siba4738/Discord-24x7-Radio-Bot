@@ -17,7 +17,7 @@ module.exports = {
     })
 
     let embed = new MessageEmbed()
-      .setAuthor("Commands of " + client.user.username, :song12:)
+      .setAuthor("Commands of " + client.user.username, <a:song12:949469152647733339>)
       .setColor("#fffdd0")
       .setDescription(allcmds)
       .setFooter(`Use ${client.config.prefix}help [command] for getting info of that specific command.`,"https://github.com/navaneethkm004/my-images/blob/main/giphy.gif?raw=true")
@@ -30,7 +30,7 @@ module.exports = {
       if (!command) return message.channel.send("Unknown Command")
       let commandinfo = new MessageEmbed()
         .setTitle("Command: " + command.info.name + " info")
-        .setAuthor(client.user.username, :song12:)
+        .setAuthor(client.user.username, <a:song12:949469152647733339>)
         .setColor("#fffdd0")
         .setDescription(`
               Name: ${command.info.name}
